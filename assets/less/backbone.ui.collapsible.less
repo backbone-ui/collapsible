@@ -1,0 +1,58 @@
+@import "variables.less";
+@import "transition.less";
+
+.ui-collapsible {
+	
+	
+	section {
+		
+	}
+}
+
+
+@media (max-width: 768px) {
+	
+	.ui-collapsible {
+		section {
+			float: none;
+			width: 90%;
+			margin: 0 auto;
+		}
+		
+		h2 {
+			width: 100%;
+			margin: 10px auto;
+			padding: 10px;
+			height: 50px;
+			border: 1px solid #ccc;
+			-webkit-border-radius: 5px;
+			-moz-border-radius: 5px;
+			border-radius: 5px;
+			background: url('../img/icons.png') no-repeat 0 0px;
+			background-position: right 3px;
+			cursor: hand; 
+			cursor: pointer;
+		}
+		
+		p {
+			display: none;
+		}
+		
+		
+	}
+	
+	.ui-collapsible .active {
+		section {
+		}
+		
+		h2 {
+			background-position: right -64px;
+		}
+		
+		p {
+			display: block;
+		}
+	}
+	
+	
+}

@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Sidenav</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" href="../../assets/css/12grid.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../assets/css/common.min.css" type="text/css" media="screen">
+<link href="../../assets/less/backbone.ui.collapsible.less" media="screen" rel="stylesheet/less">
+<!-- <link type="text/css" href="../../assets/less/backbone.ui.sidenav.less" media="screen" rel="stylesheet/less"> -->
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/less.js/1.3.3/less.min.js"></script>
+</head>
+<body>
+<div id="main">
+  <div class="colgroup ui-collapsible">
+    <section class="col4">
+      <h2>Heading</h2>
+      <p>Scenester meggings forage narwhal YOLO intelligentsia. Organic try-hard scenester put a bird on it vinyl. Post-ironic sriracha viral, synth raw denim bicycle rights odd future.</p>
+    </section>
+    <section class="col4">
+      <h2>Heading</h2>
+      <p>Butcher cliche odd future, flexitarian salvia bushwick occupy flannel cray semiotics. DIY pinterest american apparel, try-hard kale chips readymade twee butcher.</p>
+    </section>
+    <section class="col4">
+      <h2>Heading</h2>
+      <p>Cliche letterpress raw denim tousled stumptown, single-origin coffee art party salvia pinterest shoreditch aesthetic. Letterpress keytar flannel, kogi meh literally american apparel high life.</p>
+    </section>
+  </div>
+</div>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> 
+<script>
+$(document).ready(function() {
+	$('section h2').click(function() {
+		$(this).parent("section").toggleClass('active');
+	});
+});
+</script>
+</body>
+</html>
