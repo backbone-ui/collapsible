@@ -20,7 +20,9 @@
 		},
 		
 		toggle: function( e ) {
+			$(e.target).parent("section").siblings().removeClass("active");
 			$(e.target).parent("section").toggleClass('active');
+			$(e.target).next("p").focus();
 		} 
 	});
 	
