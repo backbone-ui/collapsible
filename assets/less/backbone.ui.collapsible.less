@@ -4,35 +4,35 @@
 .ui-collapsible {
 	/* background-color: #fff; */
 	padding: @padding-max;
-	
+
 	section {
 	}
 }
 
 
 @media (max-width: 768px) {
-	
+
 	.ui-collapsible {
 		section {
 			float: none;
 			width: 100%;
 			margin: 0 auto;
 		}
-		
+
 		h2 {
 			width: 100%;
 			margin: 0 auto;
 			padding: @padding-med;
-			height: 50px;
+			/*height: 50px;*/
 			/* border: 1px solid #ccc; */
 			-webkit-border-radius: 5px;
 			-moz-border-radius: 5px;
 			border-radius: 5px;
 			background: url('../img/icons-gray.png') no-repeat right 6px;
-			cursor: hand; 
+			cursor: hand;
 			cursor: pointer;
 		}
-		
+
 		p {
 			display: none;
 			/* border: 1px solid #ccc; */
@@ -40,7 +40,7 @@
 			border-bottom: none;
 			padding: @padding-med;
 		}
-		
+
 		p:last-child {
 			/* border-bottom: 1px solid #ccc; */
 			-webkit-border-radius: 0 0 5px 5px;
@@ -48,11 +48,11 @@
 			border-radius: 0 0 5px 5px;
 		}
 	}
-	
+
 	.ui-collapsible .active {
 		section {
 		}
-		
+
 		h2 {
 			background-position: right -46px;
 			border-bottom: none;
@@ -60,11 +60,11 @@
 			-moz-border-radius: 5px 5px 0 0;
 			border-radius: 5px 5px 0 0;
 		}
-		
+
 		p {
 			display: block;
 		}
 	}
-	
-	
+
+
 }
