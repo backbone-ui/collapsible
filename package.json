@@ -1,0 +1,22 @@
+{
+	"name" : "backbone.ui.collapsible",
+	"version" : "0.1.0",
+	"author": "makesites",
+	"homepage" : "http://makesites.org/backbone-ui",
+	"dependencies" : {
+		"grunt" : "0.4.x",
+		"grunt-contrib-uglify" : "0.2.x",
+		"grunt-contrib-less" : "0.7.x",
+		"grunt-contrib-jshint" : "0.6.x",
+		"grunt-contrib-concat" : "0.3.x"
+	},
+	"engine" : {
+		"node" : "0.8.x"
+	},
+	"licenses": [
+		{
+		"type": "MIT license",
+		"url": "http://makesites.org/licenses/MIT"
+		}
+	]
+}
