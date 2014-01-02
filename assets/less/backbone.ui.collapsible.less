@@ -2,17 +2,17 @@
 @import "transition.less";
 
 .ui-collapsible {
-	/* background-color: #fff; */
-	padding: @padding-max;
+	/* background-color: #fff;
+	padding: @padding-max; */
 
 	section {
 	}
 }
 
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) { */
 
-	.ui-collapsible {
+	.ui-collapsible.compact {
 		.ui-collapsible-item {
 			float: none;
 			width: 100%;
@@ -35,24 +35,24 @@
 
 		.ui-collapsible-content {
 			display: none;
-			/* border: 1px solid #ccc; */
+			/* border: 1px solid #ccc;
 			border-top: none;
 			border-bottom: none;
-			padding: @padding-med;
+			padding: @padding-med; */
 		}
 
 		.ui-collapsible-content:last-child {
-			/* border-bottom: 1px solid #ccc; */
+			/* border-bottom: 1px solid #ccc;
 			-webkit-border-radius: 0 0 5px 5px;
 			-moz-border-radius: 0 0 5px 5px;
-			border-radius: 0 0 5px 5px;
+			border-radius: 0 0 5px 5px;*/
 		}
 	}
 
 	.ui-collapsible .active {
 		.ui-collapsible-item {
 		}
-
+/*
 		.ui-collapsible-title {
 			background-position: right -46px;
 			border-bottom: none;
@@ -60,11 +60,11 @@
 			-moz-border-radius: 5px 5px 0 0;
 			border-radius: 5px 5px 0 0;
 		}
-
+*/
 		.ui-collapsible-content {
 			display: block;
 		}
 	}
 
 
-}
+/* } */

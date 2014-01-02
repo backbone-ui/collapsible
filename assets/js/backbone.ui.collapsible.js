@@ -20,7 +20,8 @@
 		options: _.extend({}, View.prototype.options, {
 			itemEl: "section",
 			itemTitle: "h2",
-			itemContent: "p"
+			itemContent: "p",
+			maxWidth: "768px"
 		}),
 
 		events: {
@@ -32,7 +33,8 @@
 			// events
 				this.on("preRender", this._collapsible_preRender);
 				this.on("postRender", this._collapsible_postRender);
-			//
+			// media query
+			mqa.on("devicewidth", _.bind(this._collapsible_calculate));
 			return View.prototype.initialize.apply(this, arguments );
 		},
 
@@ -60,6 +62,15 @@
 			$(e.target).parent( this.options.itemEl ).siblings().removeClass("active");
 			$(e.target).parent( this.options.itemEl ).toggleClass('active');
 			$(e.target).next( this.options.itemContent ).focus();
+		},
+
+		_collapsible_calculate: function (enabled) {
+			console.log("devicewidth", enabled);
+			if( enabled <= this.options.maxWidth ){
+				$(this.el).addClass("compact");
+			} else {
+				$(this.el).removeClass("compact");
+			}
 		}
 	});
 
