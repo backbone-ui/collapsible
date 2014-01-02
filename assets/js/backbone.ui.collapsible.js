@@ -26,7 +26,7 @@
 		},
 
 		initialize: function(){
-			_.bidAll(this, "_collapsible_toggle");
+			_.bindAll(this, "_collapsible_toggle");
 			// events
 				this.on("preRender", this._collapsible_preRender);
 				this.on("postRender", this._collapsible_postRender);
