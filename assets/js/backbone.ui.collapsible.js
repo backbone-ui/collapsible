@@ -11,7 +11,9 @@
 	// fallbacks
 	if( _.isUndefined( Backbone.UI ) ) Backbone.UI = {};
 	// Support backbone app (if available)
-	var View = ( typeof APP != "undefined" && typeof APP.View != "undefined" ) ? APP.View : Backbone.View;
+	// support for Backbone APP() view if available...
+	var isAPP = ( typeof APP !== "undefined" && typeof APP.View !== "undefined" );
+	var View = ( isAPP ) ? APP.View : Backbone.View;
 
 	Backbone.UI.Collapsible = View.extend({
 
