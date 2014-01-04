@@ -53,6 +53,7 @@
 			$(this.el).find(this.options.itemEl).addClass("ui-collapsible-item");
 			$(this.el).find(this.options.itemTitle).addClass("ui-collapsible-title");
 			$(this.el).find(this.options.itemContent).addClass("ui-collapsible-content");
+			if( !this.options.maxWidth ) $(this.el).addClass("compact");
 		},
 
 		_collapsible_toggle: function( e ) {
