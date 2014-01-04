@@ -8,14 +8,11 @@
 
 (function(_, Backbone) {
 
-	// fallbacks
-	if( _.isUndefined( Backbone.UI ) ) Backbone.UI = {};
-	// Support backbone app (if available)
 	// support for Backbone APP() view if available...
 	var isAPP = ( typeof APP !== "undefined" && typeof APP.View !== "undefined" );
 	var View = ( isAPP ) ? APP.View : Backbone.View;
 
-	Backbone.UI.Collapsible = View.extend({
+	var Collapsible = View.extend({
 
 		options: _.extend({}, View.prototype.options, {
 			itemEl: "section",
@@ -73,5 +70,33 @@
 			}
 		}
 	});
+
+	// fallbacks
+	if( _.isUndefined( Backbone.UI ) ) Backbone.UI = {};
+	Backbone.UI.Collapsible = Collapsible;
+
+	// Support module loaders
+	if ( typeof module === "object" && module && typeof module.exports === "object" ) {
+		// Expose as module.exports in loaders that implement CommonJS module pattern.
+		module.exports = Collapsible;
+	} else {
+		// Register as a named AMD module, used in Require.js
+		if ( typeof define === "function" && define.amd ) {
+			//define( "backbone.ui.scrollchange", [], function () { return Collapsible; } );
+			//define( ['jquery', 'underscore', 'backbone'], function () { return Collapsible; } );
+			define( [], function () { return Collapsible; } );
+		}
+	}
+	// If there is a window object, that at least has a document property
+	if ( typeof window === "object" && typeof window.document === "object" ) {
+		window.Backbone = Backbone;
+		// update APP namespace
+		if( typeof APP != "undefined" && (_.isUndefined( APP.UI ) || _.isUndefined( APP.UI.Collapsible ) ) ){
+			APP.UI = APP.UI || {};
+			APP.UI.Collapsible = Backbone.UI.Collapsible;
+			window.APP = APP;
+		}
+	}
+
 
 })(this._, this.Backbone);
