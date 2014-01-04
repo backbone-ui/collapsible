@@ -57,8 +57,9 @@
 		},
 
 		_collapsible_toggle: function( e ) {
-			$(e.target).parent( this.options.itemEl ).siblings().removeClass("active");
-			$(e.target).parent( this.options.itemEl ).toggleClass('active');
+			//
+			$(e.target).closest( this.options.itemEl ).siblings().removeClass("active");
+			$(e.target).closest( this.options.itemEl ).toggleClass('active');
 			$(e.target).next( this.options.itemContent ).focus();
 		},
 
