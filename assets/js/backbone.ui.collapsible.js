@@ -25,7 +25,7 @@
 		}),
 
 		events: {
-			"click h2": "_collapsible_toggle",
+			"click .ui-collapsible-title": "_collapsible_toggle",
 		},
 
 		initialize: function(){
