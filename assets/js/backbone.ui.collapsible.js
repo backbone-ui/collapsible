@@ -18,7 +18,10 @@
 			itemEl: "section",
 			itemTitle: "h2",
 			itemContent: "p",
-			maxWidth: "768px"
+			maxWidth: "768px",
+			collapsible: {
+				toggle: true
+			}
 		}),
 
 		events: {
@@ -61,7 +64,8 @@
 			e.preventDefault();
 			e.stopPropagation();
 			var $el = $(e.target).closest( this.options.itemEl );
-			$el.find(this.options.itemContent).addClass('active').focus();
+			var method = (this.options.collapsible.toggle) ? "toggleClass": "addClass";
+			$el.find(this.options.itemContent)[method]('active').focus();
 			$el.siblings().find(this.options.itemContent).removeClass("active");
 		},
 
