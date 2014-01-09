@@ -64,7 +64,9 @@
 			e.preventDefault();
 			e.stopPropagation();
 			var $el = $(e.target).closest( this.options.itemEl );
+			var $title = $( e.target ).closest( this.options.itemTitle );
 			var method = (this.options.collapsible.toggle) ? "toggleClass": "addClass";
+			$title[method]('active');
 			$el.find(this.options.itemContent)[method]('active').focus();
 			$el.siblings().find(this.options.itemContent).removeClass("active");
 		},
