@@ -67,6 +67,7 @@
 			var $title = $( e.target ).closest( this.options.itemTitle );
 			var method = (this.options.collapsible.toggle) ? "toggleClass": "addClass";
 			$title[method]('active');
+			title.closest(this.options.itemEl).siblings().find(this.options.itemTitle).removeClass("active");
 			$el.find(this.options.itemContent)[method]('active').focus();
 			$el.siblings().find(this.options.itemContent).removeClass("active");
 		},
