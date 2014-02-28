@@ -30,11 +30,12 @@
 
 		initialize: function(){
 			_.bindAll(this, "_collapsible_toggle");
+			if( !isAPP ) $(this.el).unbind();
 			// events
-				this.on("preRender", this._collapsible_preRender);
-				this.on("postRender", this._collapsible_postRender);
+			this.on("preRender", this._collapsible_preRender);
+			this.on("postRender", this._collapsible_postRender);
 			// media query
-			mqa.on("devicewidth", _.bind(this._collapsible_calculate));
+			if( mqa ) mqa.on("devicewidth", _.bind(this._collapsible_calculate));
 			return View.prototype.initialize.apply(this, arguments );
 		},
 
@@ -64,7 +65,10 @@
 			e.preventDefault();
 			e.stopPropagation();
 			var $el = $(e.target).closest( this.options.itemEl );
+			var $title = $( e.target ).closest( this.options.itemTitle );
 			var method = (this.options.collapsible.toggle) ? "toggleClass": "addClass";
+			$title[method]('active');
+			$title.closest(this.options.itemEl).siblings().find(this.options.itemTitle).removeClass("active");
 			$el.find(this.options.itemContent)[method]('active').focus();
 			$el.siblings().find(this.options.itemContent).removeClass("active");
 		},
